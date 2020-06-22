@@ -1,5 +1,8 @@
 # Plot-Helper
 
+[![PyPI
+version](https://badge.fury.io/py/plot-helper.svg)](https://badge.fury.io/py/plot-helper)
+
 This is a context manager for matplotlib figures. It creates a new
 pair of figure/axes upon entry and saves, plots, and clears the figure on exit.
 
