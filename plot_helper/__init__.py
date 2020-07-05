@@ -1,10 +1,14 @@
 import matplotlib.pyplot as plt
+import os
+
+SHOW = True
+BASE_FILEPATH = None
 
 class Plotter():
     """
     Context manager which creates, saves, and shows a plot on exit.
     """
-    def __init__(self, *args, filename=None, show=True, **kwargs):
+    def __init__(self, *args, filename=None, show=None, **kwargs):
 
         self.filename = filename
         self.args = args
@@ -20,8 +24,12 @@ class Plotter():
             # Pass through errors
             raise exc_type(str(exc_val))
         if self.filename:
-            self.fig.savefig(self.filename)
-        if self.show:
+            if BASE_FILEPATH is not None:
+                self.fig.savefig(os.path.join(BASE_FILEPATH, self.filename))
+            else:
+                self.fig.savefig(self.filename)
+        show = self.show or SHOW
+        if show:
             plt.show()
             
 
