@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "plot-helper"
-version = "0.1.1"
+version = "0.1.2"
 description = "A context manager for matplotlib figures. It creates a new pair of figure/axes upon entry and saves, plots, and clears the figure on exit."
 authors = ["Saad Khan <skhan8@mail.einstein.yu.edu>"]
 license = "MIT"

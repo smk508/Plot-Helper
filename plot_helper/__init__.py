@@ -28,7 +28,9 @@ class Plotter():
                 self.fig.savefig(os.path.join(BASE_FILEPATH, self.filename))
             else:
                 self.fig.savefig(self.filename)
-        show = self.show or SHOW
+        show = self.show 
+        if show is None:
+            show = SHOW
         if show:
             plt.show()
             
